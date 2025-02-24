@@ -27,10 +27,10 @@ const projects = [
   },
   {
     id: 4,
-    name: "Loan-System-Apis",
+    name: "LoanSphere",
     technologies: "Java, Spring boot",
     image: nexabankMSImage,
-    github: "https://github.com/LAZKORIR/Loan-System-Apis",
+    github: "https://github.com/LAZKORIR/LoanSphere",
   },
 ];
 
