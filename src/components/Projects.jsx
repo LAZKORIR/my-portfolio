@@ -9,7 +9,7 @@ const projects = [
     name: "NexaBank",
     technologies: "Java, Spring boot, Thymleaf ,CSS,HTML",
     image: nexabankMSImage,
-    github: "https://github.com/LAZKORIR/NexaBank",
+    github: "https://github.com/LAZKORIR/NexaBank/tree/main/Implementation/KLL-BankingSolution",
   },
   {
     id: 2,
