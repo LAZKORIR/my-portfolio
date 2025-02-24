@@ -19,7 +19,7 @@ phases:
       - echo "Deploying to S3..."
       - aws s3 sync dist/ s3://lazarus-portfolio --delete
       - echo "Invalidating CloudFront cache..."
-      - aws cloudfront create-invalidation --distribution-id YOUR_CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
+      - aws cloudfront create-invalidation --distribution-id E2MT3FZ9IUIVCN --paths "/*"
 
 artifacts:
   files:
