@@ -3,20 +3,25 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 18  # Use the appropriate Node.js version
+      nodejs: 18  # Ensure this matches your project requirements
     commands:
+      - echo "Installing dependencies..."
       - npm install
   build:
     commands:
+      - echo "Building React project..."
       - npm run build
+      - ls -la dist/  # Check if the dist folder exists after build
   post_build:
     commands:
+      - echo "Checking if dist/ directory exists..."
+      - ls -la dist/  # Verify that the build files are in dist
       - echo "Deploying to S3..."
-      - aws s3 sync build/ s3://lazarus-portfolio --delete
+      - aws s3 sync dist/ s3://lazarus-portfolio --delete
       - echo "Invalidating CloudFront cache..."
-      - aws cloudfront create-invalidation --distribution-id E2MT3FZ9IUIVCN --paths "/*"
+      - aws cloudfront create-invalidation --distribution-id YOUR_CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
 
 artifacts:
   files:
     - '**/*'
-  base-directory: build
+  base-directory: dist
